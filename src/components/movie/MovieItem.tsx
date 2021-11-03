@@ -5,10 +5,21 @@ import useRequest from '../../hooks/use-request';
 import { apiConfig } from '../../config/api-config';
 import axios from 'axios';
 
-export const MovieItem = (
-    { movie: { id, original_title, vote_average, video, poster_path, name } }:
-        { movie: { id: number, original_title: string, name: string, vote_average: number, video: boolean, poster_path: string } }) => {
+import { withRouter } from 'react-router-dom'
 
+interface MovieItemProps {
+    movie: any,
+    handleOnClick: (id: number) => any
+}
+
+export const MovieItem = (
+    { movie, handleOnClick }: MovieItemProps
+) => {
+    const { id, original_title,
+        vote_average,
+        video,
+        poster_path,
+        name } = movie;
     const imageUrl = `https://image.tmdb.org/t/p/w500/${poster_path}`;
     const [showModal, setModal] = useState(false);
 
@@ -29,8 +40,10 @@ export const MovieItem = (
 
     }
 
+
+
     return (
-        <div className="MovieItem">
+        <div className="MovieItem" key={id} onClick={() => handleOnClick(id)}>
             <div className="MovieItem_image">
                 <img src={`${imageUrl}`} />
             </div>
@@ -40,7 +53,7 @@ export const MovieItem = (
                 <h2>{original_title ?? name}</h2>
                 <p>Playing on Netflix</p>
                 {/* {showModal && <CustomModal show={showModal} handleClose={(flag) => setModal(!flag)} />} */}
-                <Button variant="link" onClick={() => handleClick(id)} style={{ "textDecoration": 'none', "color": "white" }}>Watch Trailer</Button>
+                <Button variant="link" onClick={() => handleOnClick(id)} style={{ "textDecoration": 'none', "color": "white" }}>Watch Trailer</Button>
             </div>
         </div>
     )
