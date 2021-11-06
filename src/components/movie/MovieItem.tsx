@@ -23,24 +23,15 @@ export const MovieItem = (
     const imageUrl = `https://image.tmdb.org/t/p/w500/${poster_path}`;
     const [showModal, setModal] = useState(false);
 
-    const handleClick = async (id: number) => {
-
-        fetchVideo(id);
-        setModal(!showModal);
-    }
-
     const fetchVideo = async (id: number) => {
         const videoApiUri = `${apiConfig.BASE_URI}movie/${id}/videos?api_key=${apiConfig.API_KEY}`;
         try {
             const result = await axios.get(videoApiUri);
-            console.log('video result', result)
         } catch (e) {
 
         }
 
     }
-
-
 
     return (
         <div className="MovieItem" key={id} onClick={() => handleOnClick(id)}>
@@ -49,11 +40,9 @@ export const MovieItem = (
             </div>
 
             <div className="MovieItem_info">
-                <p>{vote_average}/ 10</p>
+                <p>Average Rating:{vote_average}/ 10</p>
                 <h2>{original_title ?? name}</h2>
-                <p>Playing on Netflix</p>
-                {/* {showModal && <CustomModal show={showModal} handleClose={(flag) => setModal(!flag)} />} */}
-                <Button variant="link" onClick={() => handleOnClick(id)} style={{ "textDecoration": 'none', "color": "white" }}>Watch Trailer</Button>
+                <Button variant="link" onClick={() => handleOnClick(id)} style={{ "textDecoration": 'none', "color": "white", "padding": 0 }}>Watch Trailer</Button>
             </div>
         </div>
     )

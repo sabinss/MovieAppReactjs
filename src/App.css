@@ -105,3 +105,29 @@ img {
 .Movie_trailer {
   margin: 0 auto;
 }
+
+@media only screen and (max-width: 600px) {
+  .App {
+    width: 90%;
+  }
+  h2 {
+    font-size: 10px;
+  }
+  p {
+    font-size: 10px;
+  }
+  .Movie {
+    display: block;
+  }
+  .TvShowList {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+
+  .MovieList {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+}

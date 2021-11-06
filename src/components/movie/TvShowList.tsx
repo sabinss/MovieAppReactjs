@@ -8,6 +8,9 @@ export const TvShowList = (props: any) => {
 
     return (
         <div className="TvShowList">
+            <div className="Header_movies">
+                <h2>Trending Movies</h2>
+            </div>
             {
                 props.data.slice(0, 13).map((tvShow: any) => {
                     return <MovieItem movie={tvShow} handleOnClick={handleClick} />

@@ -11,7 +11,6 @@ interface MovieProps {
 export const Movie = ({ movieData, tvShowData, ...props }: MovieProps) => {
     return (
         <>
-            <Header />
             <div className="Movie">
                 <MovieList data={movieData} {...props} />
                 <TvShowList data={tvShowData} {...props} />
