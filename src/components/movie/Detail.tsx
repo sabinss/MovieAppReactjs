@@ -67,8 +67,8 @@ export const Detail = (props: any) => {
 
     const renderMovieInfo = () => {
         return <div className="Movie_detail_info">
-            <p>Average Rating:{movieData.vote_average}/ 10</p>
             <h2>{movieData.original_title}</h2>
+            <p>Average Rating:{movieData.vote_average}/ 10</p>
             {
                 (tvShowData?.networks && tvShowData?.networks.length > 0) && <p>Playing on {tvShowData?.networks[0].name}</p>
             }
@@ -80,8 +80,8 @@ export const Detail = (props: any) => {
             netflixNetwork = tvShowData?.networks.find((x: any) => x.name.toLowerCase() == 'netflix');
         }
         return <div className="Movie_detail_info">
-            <p>Averate Rating: {tvShowData.vote_average}/ 10</p>
             <h2>{tvShowData.name}</h2>
+            <p>Averate Rating: {tvShowData.vote_average}/ 10</p>
             {netflixNetwork && <a href={tvShowData.homepage} style={{ "textDecoration": "none", "color": "white" }} target="_blank">{netflixNetwork?.name}</a>}
         </div>
     }
