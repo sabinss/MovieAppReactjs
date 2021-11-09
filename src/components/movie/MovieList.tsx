@@ -3,7 +3,6 @@ import { MovieItem } from './MovieItem';
 
 export const MovieList = (props: any) => {
     const handleClick = (id: number) => {
-        console.log('moviewLIst', props, id);
         props.history.push(`/movie/detail/${id}?type=movie`);
     }
     return (

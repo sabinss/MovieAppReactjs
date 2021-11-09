@@ -1,5 +1,4 @@
 import React from 'react'
-import { Header } from '..';
 import { MovieList } from './MovieList';
 import { TvShowList } from './TvShowList';
 
