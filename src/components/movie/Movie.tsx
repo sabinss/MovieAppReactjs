@@ -1,7 +1,7 @@
-import React from "react";
-import { MovieList } from "./MovieList";
-import { TvShowList } from "./TvShowList";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { MovieList } from './MovieList';
+import { TvShowList } from './TvShowList';
+import { Link } from 'react-router-dom';
 
 interface MovieProps {
   movieData: any[];
@@ -12,6 +12,8 @@ export const Movie = ({ movieData, tvShowData, ...props }: MovieProps) => {
   return (
     <>
       <div className="Movie">
+        <p>Cookie data===</p>
+        {document.cookie}
         <Link to="/protected?token=johndoe">Go to protected route</Link>
         <MovieList data={movieData} {...props} />
         <TvShowList data={tvShowData} {...props} />
