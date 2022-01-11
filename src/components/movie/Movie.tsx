@@ -12,8 +12,8 @@ export const Movie = ({ movieData, tvShowData, ...props }: MovieProps) => {
   return (
     <>
       <div className="Movie">
-        <p>Cookie data===</p>
-        {document.cookie}
+        {/* <p>Cookie data===</p> */}
+        {/* {document.cookie} */}
         <Link to="/protected?token=johndoe">Go to protected route</Link>
         <MovieList data={movieData} {...props} />
         <TvShowList data={tvShowData} {...props} />
