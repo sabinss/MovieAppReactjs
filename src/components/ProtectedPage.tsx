@@ -8,7 +8,7 @@ export const ProtectedPage = ({ match, location }: any) => {
   const user = 'johndoe';
 
   useEffect(() => {
-    console.log('cookies', document.cookie);
+    // console.log('cookies', document.cookie);
   }, []);
 
   const render = () => {
