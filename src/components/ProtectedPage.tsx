@@ -15,11 +15,7 @@ export const ProtectedPage = ({ match, location }: any) => {
     const token = new URLSearchParams(search).get('token');
     return user == token ? (
       <div>
-        <h1>You authenticated successfully</h1>
-        {/* <p>
-          <strong>Location Props: </strong>
-          {JSON.stringify(location, null, 2)}
-        </p> */}
+        <h1>You authenticated successfully...</h1>
         <input
           style={{ width: 300, color: 'black' }}
           placeholder="send message to webview"
